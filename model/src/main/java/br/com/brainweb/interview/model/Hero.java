@@ -2,6 +2,7 @@ package br.com.brainweb.interview.model;
 
 import br.com.brainweb.interview.model.enums.Race;
 import br.com.brainweb.interview.model.request.CreateHeroRequest;
+import br.com.brainweb.interview.model.request.UpdateHeroRequest;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,6 +30,12 @@ public class Hero {
     public Hero(CreateHeroRequest createHeroRequest, UUID powerStatsId) {
         this.name = createHeroRequest.getName();
         this.race = createHeroRequest.getRace();
+        this.powerStatsId = powerStatsId;
+    }
+    
+    public Hero(UpdateHeroRequest updateHeroRequest, UUID powerStatsId) {
+        this.name = updateHeroRequest.getName();
+        this.race = updateHeroRequest.getRace();
         this.powerStatsId = powerStatsId;
     }
 }

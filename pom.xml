@@ -87,6 +87,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
                         <id>auto-clean</id>
@@ -123,7 +124,7 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>[3.6.0,)</version>
+                                    <version>3.3.9</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
                                     <version>11</version>
