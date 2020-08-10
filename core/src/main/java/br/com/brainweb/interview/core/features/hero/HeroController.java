@@ -2,6 +2,7 @@ package br.com.brainweb.interview.core.features.hero;
 
 import br.com.brainweb.interview.model.Hero;
 import br.com.brainweb.interview.model.request.CreateHeroRequest;
+import br.com.brainweb.interview.model.request.DeleteHeroRequest;
 import br.com.brainweb.interview.model.request.SearchHeroRequest;
 import br.com.brainweb.interview.model.request.UpdateHeroRequest;
 import lombok.RequiredArgsConstructor;
@@ -45,5 +46,11 @@ public class HeroController {
             @RequestBody UpdateHeroRequest updateHeroRequest) {
         final UUID id = heroService.update(updateHeroRequest);
         return created(URI.create(format("/api/v1/heroes/update/%s", id))).build();
+    }
+
+    public ResponseEntity<Void> delete(@Validated
+            @RequestBody DeleteHeroRequest deleteHeroRequest) {
+        final Boolean id = heroService.delete(deleteHeroRequest);
+        return created(URI.create(format("/api/v1/heroes/delete/%s", id))).build();
     }
 }
